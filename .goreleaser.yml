@@ -32,6 +32,6 @@ dockers:
       - "--label=org.opencontainers.image.name={{.ProjectName}}"
       - "--label=org.opencontainers.image.revision={{.FullCommit}}"
       - "--label=org.opencontainers.image.version={{.Version}}"
-      - "--label=org.opencontainers.image.source=https://github.com/hairmare/emptypage"
+      - "--label=org.opencontainers.image.source={{.GitURL}}"
     extra_files:
       - etc/passwd
