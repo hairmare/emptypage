@@ -3,14 +3,28 @@
 An empty HTML page in a Go binary with just enough features to create a nice container experience.
 
 ## Features
-* Hosts an embedded copy of the `public/` on port 8080
+* Hosts an embedded copy of the `public/` dir on port 8080
 * Available as minimal container image (`FROM scratch`)
 * Prometheus Endpoint availabe (`/metrics`)
 * Supports Tracing
 
 ## Usage
 
-Run the `emptypage` binary or use the container available at `hairmare/emptypage`.
+Run the `emptypage` binary or use the container available at `docker.pkg.github.com/hairmare/emptypage/app`.
+
+```bash
+docker run --rm -ti -p 8080:8080 docker.pkg.github.com/hairmare/emptypage/app
+```
+
+Get page contents:
+```bash
+curl localhost:8080
+```
+
+Get metrics:
+```bash
+curl localhost:8080/metrics
+```
 
 ## Development
 
