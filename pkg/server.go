@@ -31,6 +31,7 @@ var (
 	healthy int32
 )
 
+// RunServer serves the site and handles server health and metrics
 func RunServer(listenAddr string) {
 
 	logger := log.New()

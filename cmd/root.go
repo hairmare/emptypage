@@ -39,7 +39,10 @@ func init() {
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.emptypage.yaml)")
 	rootCmd.PersistentFlags().StringVar(&listenAddr, "listen-addr", ":8080", "Listen address")
-	viper.BindPFlag("listen-addr", rootCmd.PersistentFlags().Lookup("listen-addr"))
+	if err := viper.BindPFlag("listen-addr", rootCmd.PersistentFlags().Lookup("listen-addr")); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 }
 
 // initConfig reads in config file and ENV variables if set.
