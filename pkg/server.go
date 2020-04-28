@@ -18,6 +18,7 @@ import (
 	metrics "github.com/slok/go-http-metrics/metrics/prometheus"
 	"github.com/slok/go-http-metrics/middleware"
 
+        // we need to import our statik module so the fs module can load it
 	_ "github.com/hairmare/emptypage/statik"
 )
 
