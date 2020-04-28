@@ -1,7 +1,6 @@
 name: GolangCI-Lint
 
 on:
-  pull_request:
   push:
 
 jobs:

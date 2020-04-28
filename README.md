@@ -43,6 +43,15 @@ Build a local copy of the server.
 go build
 ```
 
+### pre-commit hook
+
+#### pre-commit configuration
+
+```bash
+pre-commit install
+pre-commit install-hooks
+```
+
 ### Release Process
 
 Create a git tag and push it to this repo or use the git web ui.
