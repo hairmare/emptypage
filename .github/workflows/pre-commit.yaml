@@ -2,6 +2,9 @@ name: Run pre-commit
 
 on:
   push:
+    branches-ignore:
+      - master
+      - gh-pages
 
 jobs:
   pre-commit:
