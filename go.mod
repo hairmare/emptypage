@@ -10,4 +10,5 @@ require (
 	github.com/slok/go-http-metrics v0.6.1
 	github.com/spf13/cobra v1.0.0
 	github.com/spf13/viper v1.6.3
+	go.hein.dev/go-version v0.1.0
 )
