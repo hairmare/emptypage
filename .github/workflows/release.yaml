@@ -25,10 +25,9 @@ jobs:
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v1
-        env:
-            VERSION: ${{ github.ref }}
         with:
           version: latest
           args: release --rm-dist -ldflags "-X cmd.commit=${GITHUB_SHA} -X cmd.version=${VERSION}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ github.ref }}
