@@ -4,6 +4,9 @@ before:
 builds:
 - env:
   - CGO_ENABLED=0
+  ldflags:
+  - "-X cmd.commit={{ .FullCommit }}"
+  - "-X cmd.version={{ .Tag }}"
 archives:
 - replacements:
     darwin: Darwin
