@@ -5,8 +5,9 @@ builds:
 - env:
   - CGO_ENABLED=0
   ldflags:
-  - "-X cmd.commit={{ .FullCommit }}"
-  - "-X cmd.version={{ .Tag }}"
+  - "-X 'github.com/hairmare/emptypage/cmd.version={{ .Tag }}'"
+  - "-X 'github.com/hairmare/emptypage/cmd.commit={{ .FullCommit }}'"
+  - "-X 'github.com/hairmare/emptypage/cmd.date={{.Date}}'"
 archives:
 - replacements:
     darwin: Darwin
