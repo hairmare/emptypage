@@ -17,6 +17,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	metrics "github.com/slok/go-http-metrics/metrics/prometheus"
 	"github.com/slok/go-http-metrics/middleware"
+	"github.com/slok/go-http-metrics/middleware/std"
 
 	// we need to import our statik module so the fs module can load it
 	_ "github.com/hairmare/emptypage/statik"
@@ -46,7 +47,7 @@ func RunServer(listenAddr string) {
 	})
 
 	router := http.NewServeMux()
-	router.Handle("/", mdlw.Handler("", http.FileServer(statikFS)))
+	router.Handle("/", std.Handler("", mdlw, http.FileServer(statikFS)))
 	router.Handle("/healthz", healthz())
 	router.Handle("/metrics", promhttp.Handler())
 
