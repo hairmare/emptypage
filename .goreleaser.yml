@@ -27,10 +27,10 @@ changelog:
     - '^test:'
 dockers:
   - image_templates:
-      - "docker.pkg.github.com/hairmare/emptypage/app:{{ .Tag }}"
-      - "docker.pkg.github.com/hairmare/emptypage/app:v{{ .Major }}"
-      - "docker.pkg.github.com/hairmare/emptypage/app:v{{ .Major }}.{{ .Minor }}"
-      - "docker.pkg.github.com/hairmare/emptypage/app:latest"
+      - "ghcr.io/hairmare/emptypage:{{ .Tag }}"
+      - "ghcr.io/hairmare/emptypage:v{{ .Major }}"
+      - "ghcr.io/hairmare/emptypage:v{{ .Major }}.{{ .Minor }}"
+      - "ghcr.io/hairmare/emptypage:latest"
     build_flag_templates:
       - "--label=org.opencontainers.image.created={{.Date}}"
       - "--label=org.opencontainers.image.name={{.ProjectName}}"
